@@ -1,0 +1,9 @@
+
+               ------------------------------------------------------- Real-time system ----------------------------------------------------
+
+
+This repository houses the code developed for our assignment in the real-time systems subject.
+The project involved the utilization of a Mecanum car equipped with four omnidirectional wheels, a Microbit V2, and an ultrasonic sensor for object detection.
+The primary function of the code is to enable the car to autonomously redirect itself upon detecting objects in its path. 
+This functionality has proven effective in various scenarios. 
+Leveraging the capabilities of the four omnidirectional wheels, the car can adeptly maneuver through tight spaces by autonomously adjusting its trajectory.
