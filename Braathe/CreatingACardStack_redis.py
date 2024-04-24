@@ -1,13 +1,13 @@
 '''
-The python file is just a function cut out of my blackjack code project.
-After trying out different stuff and thinking of how to show off my understanding of redis and how to integrate it with python,
-i came to the conclusion to not add values into the database and use it. Instead i will add variables and data structures into the redis
-inside the python file and retrieve it aswell. 
+The Python file encapsulates a function extracted from my blackjack code project. 
+Following experimentation and contemplation on showcasing my grasp of Redis integration with Python, 
+I concluded against populating the database with values.
+Instead, I opted to store variables and data structures within Redis directly from the Python file and retrieve them as needed.
 
-In conclusion. i dont think my "method" of solving this was the smart neither the right way. But instead i wanted to show of
-my understanding of how i understand how to interact with redis. The file does not give out the right output after compiling,
-because i understood that there are certain limitation of how data structures work together in redis. 
-
+In essence, my approach may not have been the most prudent or conventional. 
+However, my intention was to demonstrate my comprehension of interacting with Redis. 
+It's worth noting that the file fails to produce the intended output upon compilation 
+due to certain limitations inherent in how data structures interact within Redis.
 
 '''
 
