@@ -283,7 +283,7 @@ while (quit != True):
     roundFinished  = dealersTurnOutcome[0]
     PlayerChips = dealersTurnOutcome[1]
 
-    if(roundFinished == True):
+    if roundFinished:
         playerHand = []
         dealerHand = []
         playerHandValue = 0
