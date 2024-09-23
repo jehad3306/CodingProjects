@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <openssl/bn.h>
+
+#define NBITS 256
+
+
+void printBN(char *msg, BIGNUM * a)
+{
+    // Convert the BIGNUM to number string
+    char * number_str = BN_bn2dec(a);
+    
+    // Print out the number string
+    printf("%s %s\n", msg, number_str);
+    
+    // Free the dynamically allocated memory
+    OPENSSL_free(number_str);
+}
+
+
+
+int main() {
+    
+    BN_CTX *ctx = BN_CTX_new();
+
+    
+ // ------------------ Task 2-------------  
+    
+    // Declaring variables
+    BIGNUM *message = BN_new();
+    BIGNUM *n = BN_new();
+    BIGNUM *e = BN_new();
+    BIGNUM *d = BN_new();
+    
+    BIGNUM *encryption = BN_new();
+    BIGNUM *decryption = BN_new();
+    
+    // Converting Hexdecimal string to BN
+    BN_hex2bn(&message, "4120746f702073656372657421");
+    BN_hex2bn(&n, "DCBFFE3E51F62E09CE7032E2677A78946A849DC4CDDE3A4D0CB81629242FB1A5");
+    BN_hex2bn(&e, "010001");
+    BN_hex2bn(&d, "74D806F9F3A62BAE331FFE3F0A68AFE35B3D2E4794148AACBC26AA381CD7D30D");
+    
+    // Encrypting the message
+    BN_mod_exp(encryption, message, e, n, ctx);
+    
+    // Decrypting the message
+    BN_mod_exp(decryption, encryption, d, n, ctx);
+    
+    // Printing out values
+    //printBN("\nThe value of message is:", message);
+    //printBN("\nThe value of encryption is:", encryption);
+    //printBN("\nThe value of decryption is:", decryption);
+    
+
+
+
+   // ------------------ Task 4----------
+   
+   BIGNUM *sig = BN_new();
+   BIGNUM *M1 = BN_new();
+   BIGNUM *M2 = BN_new();
+   
+   BN_hex2bn(&M1, "49206f776520796f752024323030302e");
+   BN_hex2bn(&M2, "49206f776520796f752024333030302e");
+
+   BN_mod_exp(sig, M1, d, n, ctx);
+   printf("\n");
+   printBN("The value of M1 is: ", sig);
+   
+   printf("\n");
+   BN_mod_exp(sig, M2, d, n, ctx);
+   printBN("The value of M2 is: ", sig);
+   
+   
+    return 0;
+}
